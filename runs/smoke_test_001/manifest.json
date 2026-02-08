@@ -1,31 +1,20 @@
 {
   "run_id": "smoke_test_001",
-  "timestamp_start_utc": "2026-02-08T12:54:49.212342Z",
-  "config_hash_sha256": "6fdf6293519c1204ecc009e71f98e85ab28f879a1ae097679d4b2924cd8a93f7",
-  "environment_mode": "mock",
-  "status": "SUCCESS",
-  "steps": {
-    "openfold3": {
-      "status": "SUCCESS",
-      "output_structure": "runs\\smoke_test_001\\prediction.pdb"
-    },
-    "affinity": {
-      "status": "SUCCESS",
-      "scores": {
-        "pKd": 8.5,
-        "confidence": 0.9,
-        "source": "mock"
-      }
-    }
-  },
-  "errors": [],
+  "timestamp_start_utc": "2026-02-08T13:33:43.284215Z",
+  "config_hash_sha256": "279a4a0659fb38a10f23eb5839e7dbb48c9edf1ee2ee3ac3b1ab44482361e09e",
+  "environment_mode": "production",
+  "status": "FAILED",
+  "steps": {},
+  "errors": [
+    "OpenFold-3 failed (code=1)\nSTDOUT:\n\nSTDERR:\nTraceback (most recent call last):\n  File \"/home/jovyan/openfold-3/openfold3/run_openfold.py\", line 243, in <module>\n    cli()\n  File \"/opt/conda/lib/python3.12/site-packages/click/core.py\", line 1157, in __call__\n    return self.main(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/lib/python3.12/site-packages/click/core.py\", line 1078, in main\n    rv = self.invoke(ctx)\n         ^^^^^^^^^^^^^^^^\n  File \"/opt/conda/lib/python3.12/site-packages/click/core.py\", line 1688, in invoke\n    return _process_result(sub_ctx.command.invoke(sub_ctx))\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/lib/python3.12/site-packages/click/core.py\", line 1434, in invoke\n    return ctx.invoke(self.callback, **ctx.params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/conda/lib/python3.12/site-packages/click/core.py\", line 783, in invoke\n    return __callback(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/jovyan/openfold-3/openfold3/run_openfold.py\", line 146, in predict\n    from openfold3.entry_points.experiment_runner import (\n  File \"/home/jovyan/openfold-3/openfold3/entry_points/experiment_runner.py\", line 38, in <module>\n    from openfold3.core.data.framework.data_module import (\n  File \"/home/jovyan/openfold-3/openfold3/core/data/framework/__init__.py\", line 26, in <module>\n    _import_all_py_files_from_dir(\n  File \"/home/jovyan/openfold-3/openfold3/core/data/framework/__init__.py\", line 22, in _import_all_py_files_from_dir\n    __import__(\".\".join(list(path.parts[-6:-1]) + [path.parts[-1].split(\".\")[0]]))\n  File \"/home/jovyan/openfold-3/openfold3/core/data/framework/single_datasets/pdb.py\", line 26, in <module>\n    from openfold3.core.data.framework.data_module import openfold_batch_collator\n  File \"/home/jovyan/openfold-3/openfold3/core/data/framework/data_module.py\", line 65, in <module>\n    from openfold3.core.data.framework.stochastic_sampler_dataset import (\n  File \"/home/jovyan/openfold-3/openfold3/core/data/framework/stochastic_sampler_dataset.py\", line 52, in <module>\n    from openfold3.core.data.framework.single_datasets.base_of3 import BaseOF3Dataset\n  File \"/home/jovyan/openfold-3/openfold3/core/data/framework/single_datasets/base_of3.py\", line 22, in <module>\n    from biotite.structure import AtomArray\nModuleNotFoundError: No module named 'biotite'\n"
+  ],
   "reproducibility": {
-    "pipeline_git_sha": "97f8889d11f43f71cb098065eee98f1e4a7ee661",
-    "python_version": "3.14.0",
-    "platform": "Windows-11-10.0.26220-SP0",
+    "pipeline_git_sha": "1bf4ea7d1759888e5da341a92d51d4132b0e64ad",
+    "python_version": "3.12.7",
+    "platform": "Linux-6.12.46-66.121.amzn2023.x86_64-x86_64-with-glibc2.39",
     "openfold3_commit": "aeac5fd",
     "container_image": "unknown"
   },
-  "timestamp_end_utc": "2026-02-08T12:54:49.528326Z",
-  "duration_seconds": 0.32
+  "timestamp_end_utc": "2026-02-08T13:33:51.864250Z",
+  "duration_seconds": 8.58
 }

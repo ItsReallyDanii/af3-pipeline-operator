@@ -1,5 +1,5 @@
 run_id: "smoke_test_001"
-mode: "mock"  # Change to 'production' on GPU node
+mode: "production"  # Change to 'production' on GPU node
 target_name: "CBLB_TKB_Domain"
 
 input:

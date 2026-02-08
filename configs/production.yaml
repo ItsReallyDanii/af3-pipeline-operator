@@ -1,0 +1,18 @@
+run_id: "prod_kras_bypass_001"
+mode: "production"
+target_name: "KRAS_G12D"
+
+input:
+  # KRAS G12D Mutant Sequence
+  protein_sequence: "MTEYKLVVVGAGGVGKSALTIQLIQNHFVDEYDPTIEDSYRKQVVIDGETCLLDILDTAGQEEYSAMRDQYMRTGEGFLCVFAINNTKSFEDIHHYREQIKRVKDSEDVPMVLVGNKCDLPSRTVDTKQAQDLARSYGIPFIETSAKTRQRVEDAFYTLVREIRQYRLKKISKEEKTPGCVKIKKCIIM"
+  # Adagrasib (Mirati) SMILES
+  ligand_smiles: "CN1CCN(CC1)C2=CC3=C(C=C2F)C(=NC=N3)C4=CC(=C(C=C4)O)Cl"
+
+settings:
+  cuda_device: 0
+  output_format: "pdb"
+  seed: 42
+  
+  # --- THE BYPASS FLAGS ---
+  use_remote_msa: true
+  ssl_verify: false       # <--- The Key. Disables SSL checks for this run.

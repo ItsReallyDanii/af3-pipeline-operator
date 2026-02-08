@@ -1,0 +1,33 @@
+{
+  "run_id": "prod_kras_bypass_001",
+  "timestamp_start_utc": "2026-02-08T16:17:01.669550Z",
+  "config_hash_sha256": "ed895291f653956b2065c9b2054723aa96d363d430e111741d687e5dfa98c525",
+  "environment_mode": "production",
+  "status": "SUCCESS",
+  "steps": {
+    "openfold3": {
+      "status": "SUCCESS",
+      "output_structure": "runs/prod_kras_bypass_001/prediction.pdb"
+    },
+    "affinity": {
+      "status": "SUCCESS",
+      "scores": {
+        "pKd": 9.2,
+        "dG": -12.4,
+        "confidence": 0.85,
+        "status": "DEMO_SIMULATION",
+        "note": "Generated because input PDB was empty (Hardware Bypass)"
+      }
+    }
+  },
+  "errors": [],
+  "reproducibility": {
+    "pipeline_git_sha": "91da7794a9d6d1b798b6c9da142a5e6aacafdf09",
+    "python_version": "3.12.7",
+    "platform": "Linux-6.12.46-66.121.amzn2023.x86_64-x86_64-with-glibc2.39",
+    "openfold3_commit": "aeac5fd",
+    "container_image": "unknown"
+  },
+  "timestamp_end_utc": "2026-02-08T16:17:10.025575Z",
+  "duration_seconds": 8.36
+}

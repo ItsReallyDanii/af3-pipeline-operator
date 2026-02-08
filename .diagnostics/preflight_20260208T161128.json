@@ -1,0 +1,323 @@
+{
+  "python_version": "3.12.9",
+  "platform": "Linux-6.12.46-66.121.amzn2023.x86_64-x86_64-with-glibc2.39",
+  "total_checks": 52,
+  "passed": 52,
+  "failed": 0,
+  "warnings": 0,
+  "overall": "PASS",
+  "checks": [
+    {
+      "name": "Python version",
+      "passed": true,
+      "detail": "3.12.9 (need 3.12.x)",
+      "severity": "error"
+    },
+    {
+      "name": "OS",
+      "passed": true,
+      "detail": "linux (need linux)",
+      "severity": "error"
+    },
+    {
+      "name": "Architecture",
+      "passed": true,
+      "detail": "x86_64 (need x86_64)",
+      "severity": "error"
+    },
+    {
+      "name": "Pointer size",
+      "passed": true,
+      "detail": "64-bit",
+      "severity": "error"
+    },
+    {
+      "name": "Platform detail",
+      "passed": true,
+      "detail": "Linux-6.12.46-66.121.amzn2023.x86_64-x86_64-with-glibc2.39",
+      "severity": "info"
+    },
+    {
+      "name": "nvidia-smi",
+      "passed": true,
+      "detail": "NVIDIA L4, 570.195.03, 23034",
+      "severity": "error"
+    },
+    {
+      "name": "nvcc",
+      "passed": true,
+      "detail": "Cuda compilation tools, release 12.6, V12.6.85",
+      "severity": "error"
+    },
+    {
+      "name": "CUDA_HOME",
+      "passed": true,
+      "detail": "/opt/conda",
+      "severity": "error"
+    },
+    {
+      "name": "Header: cusolverDn.h",
+      "passed": true,
+      "detail": "/opt/conda/envs/of3ds/targets/x86_64-linux/include/cusolverDn.h",
+      "severity": "error"
+    },
+    {
+      "name": "Header: cusparse.h",
+      "passed": true,
+      "detail": "/opt/conda/envs/of3ds/targets/x86_64-linux/include/cusparse.h",
+      "severity": "error"
+    },
+    {
+      "name": "Header: cublas_v2.h",
+      "passed": true,
+      "detail": "/opt/conda/envs/of3ds/targets/x86_64-linux/include/cublas_v2.h",
+      "severity": "error"
+    },
+    {
+      "name": "Library: libcublas.so",
+      "passed": true,
+      "detail": "/opt/conda/lib/libcublas.so.12",
+      "severity": "error"
+    },
+    {
+      "name": "Library: libcusolver.so",
+      "passed": true,
+      "detail": "/opt/conda/lib/libcusolver.so.11",
+      "severity": "error"
+    },
+    {
+      "name": "Library: libcusparse.so",
+      "passed": true,
+      "detail": "/opt/conda/lib/libcusparse.so.12",
+      "severity": "error"
+    },
+    {
+      "name": "torch import",
+      "passed": true,
+      "detail": "v2.6.0+cu126",
+      "severity": "error"
+    },
+    {
+      "name": "torch.cuda.is_available()",
+      "passed": true,
+      "detail": "True",
+      "severity": "error"
+    },
+    {
+      "name": "torch.cuda.device_count()",
+      "passed": true,
+      "detail": "1",
+      "severity": "error"
+    },
+    {
+      "name": "torch CUDA version",
+      "passed": true,
+      "detail": "12.6",
+      "severity": "info"
+    },
+    {
+      "name": "GPU name",
+      "passed": true,
+      "detail": "NVIDIA L4",
+      "severity": "info"
+    },
+    {
+      "name": "cuDNN version",
+      "passed": true,
+      "detail": "90501",
+      "severity": "info"
+    },
+    {
+      "name": "deepspeed import",
+      "passed": true,
+      "detail": "v0.16.2",
+      "severity": "error"
+    },
+    {
+      "name": "deepspeed env_report",
+      "passed": true,
+      "detail": "[2026-02-08 16:11:36,174] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect); DeepSpeed C++/CUDA extension op report; \u001b[93m [WARNING] \u001b[0m sparse_attn requir",
+      "severity": "info"
+    },
+    {
+      "name": "import pytorch_lightning",
+      "passed": true,
+      "detail": "v2.5.0.post0",
+      "severity": "error"
+    },
+    {
+      "name": "import torchmetrics",
+      "passed": true,
+      "detail": "v1.6.1",
+      "severity": "error"
+    },
+    {
+      "name": "import scipy",
+      "passed": true,
+      "detail": "v1.14.1",
+      "severity": "error"
+    },
+    {
+      "name": "import requests",
+      "passed": true,
+      "detail": "v2.32.3",
+      "severity": "error"
+    },
+    {
+      "name": "import click",
+      "passed": true,
+      "detail": "v8.1.8",
+      "severity": "error"
+    },
+    {
+      "name": "import pydantic",
+      "passed": true,
+      "detail": "v2.10.4",
+      "severity": "error"
+    },
+    {
+      "name": "import pyyaml",
+      "passed": true,
+      "detail": "v6.0.2",
+      "severity": "error"
+    },
+    {
+      "name": "import numpy",
+      "passed": true,
+      "detail": "v1.26.4",
+      "severity": "error"
+    },
+    {
+      "name": "import biopython",
+      "passed": true,
+      "detail": "v1.85",
+      "severity": "error"
+    },
+    {
+      "name": "import h5py",
+      "passed": true,
+      "detail": "v3.12.1",
+      "severity": "error"
+    },
+    {
+      "name": "import pandas",
+      "passed": true,
+      "detail": "v2.2.3",
+      "severity": "error"
+    },
+    {
+      "name": "import rich",
+      "passed": true,
+      "detail": "vok",
+      "severity": "error"
+    },
+    {
+      "name": "import tqdm",
+      "passed": true,
+      "detail": "v4.67.1",
+      "severity": "error"
+    },
+    {
+      "name": "certifi CA bundle",
+      "passed": true,
+      "detail": "/opt/conda/envs/of3ds/lib/python3.12/site-packages/certifi/cacert.pem",
+      "severity": "info"
+    },
+    {
+      "name": "SSL handshake to api.colabfold.com",
+      "passed": true,
+      "detail": "CN=api.colabfold.com",
+      "severity": "error"
+    },
+    {
+      "name": "HTTPS GET api.colabfold.com",
+      "passed": true,
+      "detail": "status=404",
+      "severity": "info"
+    },
+    {
+      "name": "Path: configs/smoke_test.yaml",
+      "passed": true,
+      "detail": "found -> /home/jovyan/af3-pipeline-operator/configs/smoke_test.yaml",
+      "severity": "error"
+    },
+    {
+      "name": "Path: pipeline/__init__.py",
+      "passed": true,
+      "detail": "found -> /home/jovyan/af3-pipeline-operator/pipeline/__init__.py",
+      "severity": "error"
+    },
+    {
+      "name": "Path: pipeline/orchestrator.py",
+      "passed": true,
+      "detail": "found -> /home/jovyan/af3-pipeline-operator/pipeline/orchestrator.py",
+      "severity": "error"
+    },
+    {
+      "name": "Path: pipeline/schemas.py",
+      "passed": true,
+      "detail": "found -> /home/jovyan/af3-pipeline-operator/pipeline/schemas.py",
+      "severity": "error"
+    },
+    {
+      "name": "Path: pipeline/adapters/__init__.py",
+      "passed": true,
+      "detail": "found -> /home/jovyan/af3-pipeline-operator/pipeline/adapters/__init__.py",
+      "severity": "error"
+    },
+    {
+      "name": "Path: pipeline/adapters/openfold3.py",
+      "passed": true,
+      "detail": "found -> /home/jovyan/af3-pipeline-operator/pipeline/adapters/openfold3.py",
+      "severity": "error"
+    },
+    {
+      "name": "Path: pipeline/adapters/affinity.py",
+      "passed": true,
+      "detail": "found -> /home/jovyan/af3-pipeline-operator/pipeline/adapters/affinity.py",
+      "severity": "error"
+    },
+    {
+      "name": "Path: scripts/run_pipeline.py",
+      "passed": true,
+      "detail": "found -> /home/jovyan/af3-pipeline-operator/scripts/run_pipeline.py",
+      "severity": "error"
+    },
+    {
+      "name": "Path: environment.yml",
+      "passed": true,
+      "detail": "found -> /home/jovyan/af3-pipeline-operator/environment.yml",
+      "severity": "warning"
+    },
+    {
+      "name": "Path: requirements-lock.txt",
+      "passed": true,
+      "detail": "found -> /home/jovyan/af3-pipeline-operator/requirements-lock.txt",
+      "severity": "warning"
+    },
+    {
+      "name": "Path: Makefile",
+      "passed": true,
+      "detail": "found -> /home/jovyan/af3-pipeline-operator/Makefile",
+      "severity": "warning"
+    },
+    {
+      "name": "Path: runs/",
+      "passed": true,
+      "detail": "found -> /home/jovyan/af3-pipeline-operator/runs",
+      "severity": "info"
+    },
+    {
+      "name": "Log dir: /tmp/of3test/out_clean6/logs",
+      "passed": true,
+      "detail": "0 log file(s) found",
+      "severity": "info"
+    },
+    {
+      "name": "Log dir: /home/jovyan/af3-pipeline-operator/runs",
+      "passed": true,
+      "detail": "0 log file(s) found",
+      "severity": "info"
+    }
+  ]
+}

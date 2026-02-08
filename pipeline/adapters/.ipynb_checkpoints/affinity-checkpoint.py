@@ -7,44 +7,25 @@ from pathlib import Path
 # Setup Logger
 logger = logging.getLogger(__name__)
 
-# FIXED: All arguments are now optional (defaults=None) to prevent TypeErrors.
-# We extract what we need from 'settings' or 'kwargs' dynamically.
-def run(structure_pdb=None, ligand_smiles=None, output_dir=None, mode="mock", settings=None, **kwargs):
+# FIXED: Renamed 'pdb_path' to 'structure_pdb' to match Orchestrator call
+# ADDED: **kwargs to absorb any other unexpected arguments safely
+def run(structure_pdb, ligand_smiles, output_dir, mode="mock", settings=None, **kwargs):
     """
-    Orchestrates AQAffinity Scoring with Universal Argument Handling.
+    Orchestrates AQAffinity Scoring.
     """
-    # 1. Recover Missing Data (The Scavenger Hunt)
     settings = settings or {}
-    
-    # If output_dir wasn't passed, check kwargs
-    if output_dir is None:
-        output_dir = kwargs.get('output_dir', '.')
-        
-    # If ligand_smiles wasn't passed, dig it out of settings
-    if ligand_smiles is None:
-        # Try settings['input']['ligand_smiles'] pattern
-        inp = settings.get('input', {})
-        if isinstance(inp, dict):
-            ligand_smiles = inp.get('ligand_smiles', 'UNKNOWN_LIGAND')
-        else:
-            # Maybe settings is flat?
-            ligand_smiles = settings.get('ligand_smiles', 'UNKNOWN_LIGAND')
-
-    # Ensure output path exists
     output_path = Path(output_dir) / "affinity_scores.json"
-    pdb_file = Path(structure_pdb) if structure_pdb else Path("placeholder.pdb")
+    pdb_file = Path(structure_pdb)
 
     logger.info(">>> Starting AQAffinity Scoring...")
     logger.info(f"    Target PDB: {pdb_file}")
-    logger.info(f"    Ligand: {str(ligand_smiles)[:20]}...")
+    logger.info(f"    Ligand: {ligand_smiles[:20]}...")
 
-    # --- 2. VALIDATION CHECK (The Bypass Logic) ---
-    # If PDB is empty (0 bytes) or missing, we are in 'Bypass' mode.
-    is_empty = pdb_file.exists() and pdb_file.stat().st_size == 0
-    is_missing = not pdb_file.exists()
-    
-    if is_empty or is_missing:
-        logger.warning(f"⚠️ INPUT WARNING: PDB file is {'empty' if is_empty else 'missing'}.")
+    # --- 1. VALIDATION CHECK ---
+    # If the previous step (OpenFold) failed and left a 0-byte file, 
+    # real AQAffinity would crash. We catch this here.
+    if pdb_file.stat().st_size == 0:
+        logger.warning("⚠️ INPUT WARNING: PDB file is empty (0 bytes).")
         logger.warning("   (This is expected in 'Bypass/Demo' mode without model weights)")
         logger.info("   >> Generating SIMULATED affinity scores to complete pipeline.")
         
@@ -57,12 +38,10 @@ def run(structure_pdb=None, ligand_smiles=None, output_dir=None, mode="mock", se
             "note": "Generated because input PDB was empty (Hardware Bypass)"
         }
         
-        # Ensure dir exists before writing
-        Path(output_dir).mkdir(parents=True, exist_ok=True)
         output_path.write_text(json.dumps(mock_result, indent=2))
         return mock_result
 
-    # --- 3. PRODUCTION INFERENCE ---
+    # --- 2. PRODUCTION INFERENCE ---
     try:
         # This is where we would call the real AQAffinity subprocess
         # cmd = ["python", "-m", "aqaffinity.predict", ...]
@@ -81,6 +60,5 @@ def run(structure_pdb=None, ligand_smiles=None, output_dir=None, mode="mock", se
             "status": "FAILED_FALLBACK",
             "error": str(e)
         }
-        Path(output_dir).mkdir(parents=True, exist_ok=True)
         output_path.write_text(json.dumps(fallback_result, indent=2))
         return fallback_result
