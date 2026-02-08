@@ -1,0 +1,12 @@
+run_id: "smoke_test_001"
+mode: "mock"  # Change to 'production' on GPU node
+target_name: "CBLB_TKB_Domain"
+
+input:
+  protein_sequence: "MVLSEGEWQLVLHVWAKVEADVAGHGQDILIRLFKSHPETLEKFDRVKHLKTETK"
+  ligand_smiles: "CC(=O)OC1=CC=CC=C1C(=O)O"
+
+settings:
+  cuda_device: 0
+  output_format: "pdb"
+  seed: 42
