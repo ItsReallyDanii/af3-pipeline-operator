@@ -1,0 +1,31 @@
+{
+  "run_id": "smoke_test_001",
+  "timestamp_start_utc": "2026-02-08T12:52:30.116356Z",
+  "config_hash_sha256": "fd8ebe11af62bfdecec68b9c3b95801fcf9c6d461e5ed424e6f014172d7dbaa2",
+  "environment_mode": "mock",
+  "status": "SUCCESS",
+  "steps": {
+    "openfold3": {
+      "status": "SUCCESS",
+      "output_structure": "runs/smoke_test_001/prediction.pdb"
+    },
+    "affinity": {
+      "status": "SUCCESS",
+      "scores": {
+        "pKd": 8.5,
+        "confidence": 0.9,
+        "source": "mock"
+      }
+    }
+  },
+  "errors": [],
+  "reproducibility": {
+    "pipeline_git_sha": "c961b8d5cf69d4e25b19d076cde829177ef01d96",
+    "python_version": "3.12.3",
+    "platform": "Linux-6.11.0-1018-azure-x86_64-with-glibc2.39",
+    "openfold3_commit": "aeac5fd",
+    "container_image": "unknown"
+  },
+  "timestamp_end_utc": "2026-02-08T12:52:30.320457Z",
+  "duration_seconds": 0.21
+}
