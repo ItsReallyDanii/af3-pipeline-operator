@@ -1,0 +1,31 @@
+{
+  "run_id": "smoke_test_001",
+  "timestamp_start_utc": "2026-02-08T12:54:49.212342Z",
+  "config_hash_sha256": "6fdf6293519c1204ecc009e71f98e85ab28f879a1ae097679d4b2924cd8a93f7",
+  "environment_mode": "mock",
+  "status": "SUCCESS",
+  "steps": {
+    "openfold3": {
+      "status": "SUCCESS",
+      "output_structure": "runs\\smoke_test_001\\prediction.pdb"
+    },
+    "affinity": {
+      "status": "SUCCESS",
+      "scores": {
+        "pKd": 8.5,
+        "confidence": 0.9,
+        "source": "mock"
+      }
+    }
+  },
+  "errors": [],
+  "reproducibility": {
+    "pipeline_git_sha": "97f8889d11f43f71cb098065eee98f1e4a7ee661",
+    "python_version": "3.14.0",
+    "platform": "Windows-11-10.0.26220-SP0",
+    "openfold3_commit": "aeac5fd",
+    "container_image": "unknown"
+  },
+  "timestamp_end_utc": "2026-02-08T12:54:49.528326Z",
+  "duration_seconds": 0.32
+}
